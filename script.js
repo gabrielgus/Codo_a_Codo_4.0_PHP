@@ -25,19 +25,23 @@ while (y == false) {
   }
 }
 
-MayorDeEdad(ingresado, your_name);
+esMayor = MayorDeEdad(ingresado);
 
-function MayorDeEdad (value, yname) {
+if (esMayor == true){
+  alert('Hola ' + your_name + ' usted es mayor de edad.');
+  console.log('Hola ' + your_name + ' usted es mayor de edad.');
+} else {
+  alert('Hola ' + your_name + ' usted es menor de edad.');
+  console.log('Hola ' + your_name + ' usted es mayor de edad.');
+}
+
+}
+
+function MayorDeEdad (value) {
   if (value >= 18){
-    alert('Hola ' + yname + ' usted es mayor de edad.');
-    console.log('Hola ' + yname + ' usted es mayor de edad.');
-  } else {
-    alert('Hola ' + yname + ' usted es menor de edad.');
-    console.log('Hola ' + yname + ' usted es mayor de edad.');
+   return true
   }
 }
-}
-
 
 function Dos(){
   var z = 3;
@@ -50,6 +54,14 @@ function Dos(){
         var input = prompt("Por favor \nIngrese la edad de " + your_name +  ": ");
         var ingresado = parseFloat(input);
         if ((ingresado == input) && (ingresado >= 0 && ingresado <= 110)) { 
+          esMayor = MayorDeEdad(ingresado);
+          if (esMayor == true){
+            alert('Hola ' + your_name + ' usted es mayor de edad.');
+            console.log('Hola ' + your_name + ' usted es mayor de edad.');
+          } else {
+            alert('Hola ' + your_name + ' usted es menor de edad.');
+            console.log('Hola ' + your_name + ' usted es mayor de edad.');
+          }
           var lista = document.createElement('p');
           lista.innerHTML = "Nombre: " + your_name + ", Edad: " + ingresado;
           document.getElementById('datos').appendChild(lista);
